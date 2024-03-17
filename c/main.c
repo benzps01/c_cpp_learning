@@ -33,7 +33,7 @@ void InputName(student_details *stu)
     printf("\nEnter Last Name: ");
     scanf("%s", stu->name.last_name);
     printf("\nEnter zip code: ");
-    scanf("%d", stu->add.zip);
+    scanf("%d", &stu->add.zip);
 }
 
 int main()
@@ -47,13 +47,13 @@ int main()
     student_details *student_arr = malloc(stu_no * sizeof(student_details));
 
     int i;
-    for (int i = 0; i < stu_no; i++)
+    for (i = 0; i < stu_no; i++)
     {
         printf("\nEnter details of Student %d: \n", i + 1);
         InputName(&student_arr[i]);
     }
 
-    printf("%s", student_arr[1].name.first_name);
+    printf("%s", student_arr[0].name.first_name);
     printf("%d", student_arr[0].add.zip);
 
     return 0;
